@@ -1,3 +1,7 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -22,15 +26,51 @@ table {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: rgb(95, 147, 224);
+    background-color: rgb(62, 167, 102);
     color: white;
   }
   .cta {
     border-radius: 25px;
     padding: 5px 15px;
     border: solid 2px transparent;
-    background-color: rgb(31, 34, 199);
+    background-color: rgb(17, 82, 46);
     color: white;
     font-weight: 600;
     font-size: 15px;
   }  
+  .header {
+    height: min-content;
+    width: 100%;
+    max-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(28, 97, 37);
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .header > div {
+    display: inline;
+    color: #ddd;
+  }
+  
+  .header > div > * {
+    margin-left: 15px;
+    display: inline;
+  }
+  .button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .text{
+    padding-top: 100px;
+  }

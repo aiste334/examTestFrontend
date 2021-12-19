@@ -5,11 +5,13 @@ function getCustomers() {
   fetch("http://localhost:8080/" + "customers/")
     .then((response) => response.json())
     .then((customerData) => {
+      console.log(customerData);
       createTable(customerData);
     });
 }
 
 function createTable(customerData) {
+  let table = document.querySelector(".customer-table");
   while (table.firstElementChild.children.length > 1) {
     table.firstElementChild.removeChild(table.firstElementChild.lastChild);
   }
@@ -30,6 +32,8 @@ function createTable(customerData) {
 }
 
 function addCustomerRow() {
+  let table = document.querySelector(".customer-table");
+
   let row = table.insertRow(-1);
 
   let cell1 = row.insertCell(0);
@@ -86,6 +90,7 @@ function addCustomerRow() {
   }
 }
 function addCustomer() {
+  const addBtn = document.querySelector(".add-customer");
   addBtn.addEventListener("click", addCustomerRow);
 }
 
