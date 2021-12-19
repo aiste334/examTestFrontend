@@ -8,8 +8,6 @@ function getCustomers() {
       createTable(customerData);
     });
 }
-getCustomers();
-addCustomer();
 
 function createTable(customerData) {
   while (table.firstElementChild.children.length > 1) {
@@ -30,7 +28,7 @@ function createTable(customerData) {
     cell3.innerHTML = customer.email;
   });
 }
-/////
+
 function addCustomerRow() {
   let row = table.insertRow(-1);
 
@@ -84,31 +82,20 @@ function addCustomerRow() {
       .then((customerData) => {
         console.log(customerData);
       });
-      location.reload();
+    location.reload();
   }
 }
 function addCustomer() {
   addBtn.addEventListener("click", addCustomerRow);
 }
 
-// bookingButton.addEventListener("click", ());
-// function putBooking(email, onSuccess) {
-//   const seats = getSelectedSeats();
-//   const body = {
-//     viewing: viewingId,
-//     email: email,
-//     seats: seats,
-//   };
-
-//   fetch(backendURI + "/booking/" + bookingId, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(body),
-//   })
-//     .then((response) => response.json())
-//     .then((booking) => {
-//       onSuccess();
-//     });
-// }
+export default () => {
+  const content = document.querySelector(".content");
+  fetch("./pages/customers/customers.html")
+    .then((response) => response.text())
+    .then((html) => {
+      content.innerHTML = html;
+      getCustomers();
+      addCustomer();
+    });
+};
