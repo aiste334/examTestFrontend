@@ -30,7 +30,7 @@ function createTable(customerData) {
     cell3.innerHTML = customer.email;
   });
 }
-
+/////
 function addCustomerRow() {
   let row = table.insertRow(-1);
 
